@@ -35,9 +35,6 @@ cd
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
-# install wget and curl
-apt-get update;apt-get -y install wget curl;
-
 # check registered ip
 wget -q -O daftarip http://167.99.74.4:85/ocs/ip.txt
 if ! grep -w -q $MYIP daftarip; then
@@ -91,6 +88,9 @@ email=143Clarkz@gmail.com
 
 # go to root
 cd
+
+# install wget and curl
+apt-get update;apt-get -y install wget curl;
 
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
