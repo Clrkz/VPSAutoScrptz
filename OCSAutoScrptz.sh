@@ -132,9 +132,10 @@ chmod 777 /home/vps/public_html/config
 chmod 777 /home/vps/public_html/config/inc.php
 chmod 777 /home/vps/public_html/config/route.php
 
+apt-get -y --force-yes -f install libxml-parser-perl
 
 clear
-echo "Open Browser, access http://$MYIP:81/ and complete the data as below!"
+echo "Open Browser, access http://$MYIP:85/ and complete the data as below!"
 echo "Database:"
 echo "- Database Host: localhost"
 echo "- Database Name: $DatabaseName"
@@ -162,9 +163,6 @@ cd /root
 
 #rm -f /root/jcameron-key.asc
 
-apt-get -y --force-yes -f install libxml-parser-perl
-
-
 #rm -R /home/vps/public_html/installation
 
 cd
@@ -178,7 +176,7 @@ chmod 644 /home/vps/public_html/config/route.php
 # info
 clear
 echo "=======================================================" | tee -a log-install.txt
-echo "Please login Reseller Panel at http://$MYIP:81" | tee -a log-install.txt
+echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Auto Script Installer OCS Panels Mod by Clrkz"  | tee -a log-install.txt
 echo "             (http://bytehax.blogspot.com/ - fb.com/143Clarkz)           "  | tee -a log-install.txt
