@@ -1,6 +1,5 @@
 # VPSAutoScrptz
 Service:
-
 OpenSSH: 22,444  
 Dropbear: 143,3128  
 SSL: 443  
