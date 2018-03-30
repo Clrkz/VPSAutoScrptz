@@ -25,9 +25,9 @@ fi
 vps="vps";
 
 if [[ $vps = "vps" ]]; then
-	source="http://167.99.74.4:85/ocs"
+	source="https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master"
 else
-	source="http://167.99.74.4:85/ocs"
+	source="https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master"
 fi
 
 # go to root
