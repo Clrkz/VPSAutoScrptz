@@ -334,6 +334,7 @@ echo "$so1"
 #Y
 #Y
 
+cd
 chown -R mysql:mysql /var/lib/mysql/
 chmod -R 755 /var/lib/mysql/
 
