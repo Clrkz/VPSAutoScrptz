@@ -1,0 +1,3 @@
+deb http://cdn.debian.net/debian wheezy main contrib non-free
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+deb http://packages.dotdeb.org wheezy all
