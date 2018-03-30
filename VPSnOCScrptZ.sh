@@ -265,7 +265,7 @@ wget -O delete "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/hap
 wget -O check "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/user-login.sh"
 wget -O member "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/user-list.sh"
 wget -O restart "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/resvis.sh"
-wget -O speedtest "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/speedtest_cli.py "
+wget -O speedtest "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/speedtest_cli.py"
 wget -O info "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/info.sh"
 wget -O about "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/about.sh"
 
@@ -305,52 +305,6 @@ echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | tee -a /etc/apt/
 curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| apt-key add -
 apt-get update
 apt-get install neofetch
-
-# info
-clear
-echo "Autoscript Include:" | tee log-install.txt
-echo "===========================================" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Service"  | tee -a log-install.txt
-echo "-------"  | tee -a log-install.txt
-echo "OpenSSH  : 22, 444"  | tee -a log-install.txt
-echo "Dropbear : 143, 3128"  | tee -a log-install.txt
-echo "SSL      : 443"  | tee -a log-install.txt
-echo "Squid3   : 8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
-echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
-echo "nginx    : 81"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Script"  | tee -a log-install.txt
-echo "------"  | tee -a log-install.txt
-echo "menu (Displays a list of available commands)"  | tee -a log-install.txt
-echo "usernew (Creating an SSH Account)"  | tee -a log-install.txt
-echo "trial (Create a Trial Account)"  | tee -a log-install.txt
-echo "delete (Clearing SSH Account)"  | tee -a log-install.txt
-echo "check (Check User Login)"  | tee -a log-install.txt
-echo "member (Check Member SSH)"  | tee -a log-install.txt
-echo "restart (Restart Service dropbear, webmin, squid3, openvpn and ssh)"  | tee -a log-install.txt
-echo "reboot (Reboot VPS)"  | tee -a log-install.txt
-echo "speedtest (Speedtest VPS)"  | tee -a log-install.txt
-echo "info (System Information)"  | tee -a log-install.txt
-echo "about (Information about auto install script)"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Other features"  | tee -a log-install.txt
-echo "----------"  | tee -a log-install.txt
-echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
-echo "Timezone : Asia/Manila (GMT +7)"  | tee -a log-install.txt
-echo "IPv6     : [off]"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Original Script by Fornesia, Rzengineer & Fawzya"  | tee -a log-install.txt
-echo "Modified by Clrkz"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "VPS AUTO REBOOT TIME HOURS 12 NIGHT"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "==========================================="  | tee -a log-install.txt
-cd
-rm -f /root/debian7.sh
 
 #apt-get update
 apt-get update -y
@@ -396,6 +350,7 @@ sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php
 useradd -m vps
 mkdir -p /home/vps/public_html
 rm /home/vps/public_html/index.html
+rm /home/vps/public_html/index.php
 echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html service php5-fpm restart
@@ -467,6 +422,48 @@ chmod 644 /home/vps/public_html/config/route.php
 
 # info
 clear
+# info
+echo "Autoscript Include:" | tee log-install.txt
+echo "=======================================================" | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Service"  | tee -a log-install.txt
+echo "-------"  | tee -a log-install.txt
+echo "OpenSSH  : 22, 444"  | tee -a log-install.txt
+echo "Dropbear : 143, 3128"  | tee -a log-install.txt
+echo "SSL      : 443"  | tee -a log-install.txt
+echo "Squid3   : 8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
+echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
+echo "nginx    : 81"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Script"  | tee -a log-install.txt
+echo "------"  | tee -a log-install.txt
+echo "menu (Displays a list of available commands)"  | tee -a log-install.txt
+echo "usernew (Creating an SSH Account)"  | tee -a log-install.txt
+echo "trial (Create a Trial Account)"  | tee -a log-install.txt
+echo "delete (Clearing SSH Account)"  | tee -a log-install.txt
+echo "check (Check User Login)"  | tee -a log-install.txt
+echo "member (Check Member SSH)"  | tee -a log-install.txt
+echo "restart (Restart Service dropbear, webmin, squid3, openvpn and ssh)"  | tee -a log-install.txt
+echo "reboot (Reboot VPS)"  | tee -a log-install.txt
+echo "speedtest (Speedtest VPS)"  | tee -a log-install.txt
+echo "info (System Information)"  | tee -a log-install.txt
+echo "about (Information about auto install script)"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Other features"  | tee -a log-install.txt
+echo "----------"  | tee -a log-install.txt
+echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
+echo "Timezone : Asia/Manila (GMT +7)"  | tee -a log-install.txt
+echo "IPv6     : [off]"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Original Script by Fornesia, Rzengineer & Fawzya"  | tee -a log-install.txt
+echo "Modified by Clrkz"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "VPS AUTO REBOOT TIME HOURS 12 NIGHT"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "======================================================="  | tee -a log-install.txt
 echo "=======================================================" | tee -a log-install.txt
 echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
@@ -478,5 +475,5 @@ echo "" | tee -a log-install.txt
 echo "Installation Log --> /root/log-install.txt" | tee -a log-install.txt
 echo "=======================================================" | tee -a log-install.txt
 cd ~/
-
+rm -f /root/debian7.sh
 #rm -f /root/ocspanel.sh
