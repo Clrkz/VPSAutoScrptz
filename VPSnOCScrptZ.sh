@@ -25,9 +25,9 @@ fi
 vps="vps";
 
 if [[ $vps = "vps" ]]; then
-	source="https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master"
+	source="http://167.99.74.4:85/ocs"
 else
-	source="https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master"
+	source="http://167.99.74.4:85/ocs"
 fi
 
 # go to root
@@ -65,12 +65,6 @@ echo ""
 echo "Okay, that's all I need. We are ready to setup your OCS Panels now"
 read -n1 -r -p "Press any key to continue..."
 
-#apt-get update
-apt-get update -y
-apt-get install build-essential expect -y
-
-apt-get install -y mysql-server
-
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -89,12 +83,12 @@ email=143Clarkz@gmail.com
 # go to root
 cd
 
-# install wget and curl
-apt-get update;apt-get -y install wget curl;
-
 # disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
+
+# install wget and curl
+apt-get update;apt-get -y install wget curl;
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
@@ -110,6 +104,8 @@ cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
 wget -qO - http://www.webmin.com/jcameron-key.asc | apt-key add -
 
+# update
+apt-get update
 
 # install webserver
 apt-get -y install nginx
@@ -310,9 +306,59 @@ curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| apt-k
 apt-get update
 apt-get install neofetch
 
+# info
+clear
+echo "Autoscript Include:" | tee log-install.txt
+echo "===========================================" | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Service"  | tee -a log-install.txt
+echo "-------"  | tee -a log-install.txt
+echo "OpenSSH  : 22, 444"  | tee -a log-install.txt
+echo "Dropbear : 143, 3128"  | tee -a log-install.txt
+echo "SSL      : 443"  | tee -a log-install.txt
+echo "Squid3   : 8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
+echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
+echo "nginx    : 81"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Script"  | tee -a log-install.txt
+echo "------"  | tee -a log-install.txt
+echo "menu (Displays a list of available commands)"  | tee -a log-install.txt
+echo "usernew (Creating an SSH Account)"  | tee -a log-install.txt
+echo "trial (Create a Trial Account)"  | tee -a log-install.txt
+echo "delete (Clearing SSH Account)"  | tee -a log-install.txt
+echo "check (Check User Login)"  | tee -a log-install.txt
+echo "member (Check Member SSH)"  | tee -a log-install.txt
+echo "restart (Restart Service dropbear, webmin, squid3, openvpn and ssh)"  | tee -a log-install.txt
+echo "reboot (Reboot VPS)"  | tee -a log-install.txt
+echo "speedtest (Speedtest VPS)"  | tee -a log-install.txt
+echo "info (System Information)"  | tee -a log-install.txt
+echo "about (Information about auto install script)"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Other features"  | tee -a log-install.txt
+echo "----------"  | tee -a log-install.txt
+echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
+echo "Timezone : Asia/Manila (GMT +7)"  | tee -a log-install.txt
+echo "IPv6     : [off]"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Original Script by Fornesia, Rzengineer & Fawzya"  | tee -a log-install.txt
+echo "Modified by Clrkz"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "VPS AUTO REBOOT TIME HOURS 12 NIGHT"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "==========================================="  | tee -a log-install.txt
 cd
+rm -f /root/debian7.sh
 
-#mysql_secure_installation 
+#apt-get update
+apt-get update -y
+apt-get install build-essential expect -y
+
+apt-get install -y mysql-server
+
+#mysql_secure_installation
 so1=$(expect -c "
 spawn mysql_secure_installation; sleep 3
 expect \"\";  sleep 3; send \"\r\"
@@ -421,51 +467,6 @@ chmod 644 /home/vps/public_html/config/route.php
 
 # info
 clear
-echo "Autoscript Include:" | tee log-install.txt
-echo "===========================================" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Service"  | tee -a log-install.txt
-echo "-------"  | tee -a log-install.txt
-echo "OpenSSH  : 22, 444"  | tee -a log-install.txt
-echo "Dropbear : 143, 3128"  | tee -a log-install.txt
-echo "SSL      : 443"  | tee -a log-install.txt
-echo "Squid3   : 8000, 8080 (limit to IP SSH)"  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee -a log-install.txt
-echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
-echo "nginx    : 81"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Script"  | tee -a log-install.txt
-echo "------"  | tee -a log-install.txt
-echo "menu (Displays a list of available commands)"  | tee -a log-install.txt
-echo "usernew (Creating an SSH Account)"  | tee -a log-install.txt
-echo "trial (Create a Trial Account)"  | tee -a log-install.txt
-echo "delete (Clearing SSH Account)"  | tee -a log-install.txt
-echo "check (Check User Login)"  | tee -a log-install.txt
-echo "member (Check Member SSH)"  | tee -a log-install.txt
-echo "restart (Restart Service dropbear, webmin, squid3, openvpn and ssh)"  | tee -a log-install.txt
-echo "reboot (Reboot VPS)"  | tee -a log-install.txt
-echo "speedtest (Speedtest VPS)"  | tee -a log-install.txt
-echo "info (System Information)"  | tee -a log-install.txt
-echo "about (Information about auto install script)"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Other features"  | tee -a log-install.txt
-echo "----------"  | tee -a log-install.txt
-echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
-echo "Timezone : Asia/Manila (GMT +7)"  | tee -a log-install.txt
-echo "IPv6     : [off]"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Original Script by Fornesia, Rzengineer & Fawzya"  | tee -a log-install.txt
-echo "Modified by Clrkz"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "VPS AUTO REBOOT TIME HOURS 12 NIGHT"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "==========================================="  | tee -a log-install.txt
-cd
-
-# info
-clear
 echo "=======================================================" | tee -a log-install.txt
 echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
@@ -479,6 +480,3 @@ echo "=======================================================" | tee -a log-inst
 cd ~/
 
 #rm -f /root/ocspanel.sh
-
-
-rm -f /root/debian7.sh
