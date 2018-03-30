@@ -35,6 +35,9 @@ cd
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
+# install wget and curl
+apt-get update;apt-get -y install wget curl;
+
 # check registered ip
 wget -q -O daftarip http://167.99.74.4:85/ocs/ip.txt
 if ! grep -w -q $MYIP daftarip; then
@@ -69,6 +72,8 @@ read -n1 -r -p "Press any key to continue..."
 apt-get update -y
 apt-get install build-essential expect -y
 
+apt-get install -y mysql-server
+
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -91,9 +96,6 @@ cd
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-# install wget and curl
-apt-get update;apt-get -y install wget curl;
-
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 
@@ -108,8 +110,6 @@ cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
 wget -qO - http://www.webmin.com/jcameron-key.asc | apt-key add -
 
-# update
-apt-get update
 
 # install webserver
 apt-get -y install nginx
@@ -310,7 +310,7 @@ curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| apt-k
 apt-get update
 apt-get install neofetch
 
-apt-get install -y mysql-server
+cd
 
 #mysql_secure_installation 
 so1=$(expect -c "
