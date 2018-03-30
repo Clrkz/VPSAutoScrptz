@@ -460,8 +460,6 @@ echo ""  | tee -a log-install.txt
 echo "Original Script by Fornesia, Rzengineer & Fawzya"  | tee -a log-install.txt
 echo "Modified by Clrkz"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
 echo "VPS AUTO REBOOT TIME HOURS 12 NIGHT"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "======================================================="  | tee -a log-install.txt
@@ -476,5 +474,5 @@ echo "" | tee -a log-install.txt
 echo "Installation Log --> /root/log-install.txt" | tee -a log-install.txt
 echo "=======================================================" | tee -a log-install.txt
 cd ~/
-rm -f /root/debian7.sh
+rm -f /root/VPSnOCScrptZ.sh
 #rm -f /root/ocspanel.sh
