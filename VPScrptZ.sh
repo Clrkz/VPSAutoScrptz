@@ -211,6 +211,10 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 service ssh restart
 service dropbear restart
 
+#xml parser
+cd
+apt-get -y --force-yes -f install libxml-parser-perl
+
 # download script
 cd /usr/bin
 wget -O menu "https://raw.githubusercontent.com/Clrkz/VPSAutoScrptz/master/menu.sh"
