@@ -1,3 +1,5 @@
+#!/bin/bash
+#Clrkz
 cd
 
 chmod -R g+rw /home/vps/public_html 
