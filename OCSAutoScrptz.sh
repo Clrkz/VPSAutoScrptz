@@ -64,6 +64,31 @@ read -n1 -r -p "Press any key to continue..."
 apt-get update -y
 apt-get install build-essential expect -y
 
+echo "clear" >> .bashrc
+echo 'echo -e "      # ###       ###                  /"' >> .bashrc
+echo 'echo -e "    /  /###  /     ###               #/"' >> .bashrc
+echo 'echo -e "   /  /  ###/       ##               ##"' >> .bashrc
+echo 'echo -e "  /  ##   ##        ##               ##"' >> .bashrc
+echo 'echo -e " /  ###             ##               ##"' >> .bashrc
+echo 'echo -e "##   ##             ##  ###  /###    ##  /##   ######"' >> .bashrc
+echo 'echo -e "##   ##             ##   ###/ #### / ## / ### /#######"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##   ###/  ##/   / /      ##"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##         ##   /         /"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##         ##  /         /"' >> .bashrc
+echo 'echo -e " ##  ##             ##    ##         ## ##        ###"' >> .bashrc
+echo 'echo -e "  ## #      /       ##    ##         ######        ###"' >> .bashrc
+echo 'echo -e "   ###     /        ##    ##         ##  ###        ###"' >> .bashrc
+echo 'echo -e "    ######/         ### / ###        ##   ### /      ##"' >> .bashrc
+echo 'echo -e "      ###            ##/   ###        ##   ##/       ##"' >> .bashrc
+echo 'echo -e "                                                     /"' >> .bashrc
+echo 'echo -e "                                                    /"' >> .bashrc
+echo 'echo -e "                                                   /"' >> .bashrc
+echo 'echo -e "                                                  /"' >> .bashrc
+echo 'echo -e "welcome to the server $HOSTNAME" | lolcat' >> .bashrc
+echo 'echo -e "Script mod by Clrkz"' >> .bashrc
+echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
+echo 'echo -e ""' >> .bashrc
+
 apt-get install -y mysql-server
 
 #mysql_secure_installation
