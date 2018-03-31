@@ -5,6 +5,21 @@
 # 
 # ==================================================
 
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+
+# check registered ip
+wget -q -O daftarip http://167.99.74.4:85/ocs/ip.txt
+if ! grep -w -q $MYIP daftarip; then
+	echo "Sorry, only registered IPs can use this script!"
+	if [[ $vps = "vps" ]]; then
+		echo "Powered by Clrkz"
+	else
+		echo "Powered by Clrkz"
+	fi
+	rm -f /root/daftarip
+	exit
+fi
+
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
