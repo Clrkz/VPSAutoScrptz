@@ -8,7 +8,7 @@
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
 # check registered ip
-wget -q -O daftarip http://167.99.74.4:85/ocs/ip.txt
+wget -q -O daftarip http://188.166.215.119:85/ocs/ip.txt
 if ! grep -w -q $MYIP daftarip; then
 	echo "Sorry, only registered IPs can use this script!"
 	if [[ $vps = "vps" ]]; then
