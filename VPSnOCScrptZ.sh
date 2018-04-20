@@ -34,7 +34,7 @@ fi
 cd
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-
+: '
 # check registered ip
 wget -q -O daftarip http://188.166.215.119:85/ocs/ip.txt
 if ! grep -w -q $MYIP daftarip; then
@@ -47,7 +47,7 @@ if ! grep -w -q $MYIP daftarip; then
 	rm -f /root/daftarip
 	exit
 fi
-
+'
 #https://github.com/adenvt/OcsPanels/wiki/tutor-debian
 
 clear
