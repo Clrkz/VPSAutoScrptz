@@ -57,6 +57,7 @@ chmod +x update
 chmod +x ban
 chmod +x unban
 cd
+sed -i -e 's/\r$//' /usr/bin/update
 clear
 echo " "
 echo "DONE! OCS Autoscript Update By Clrkz" 
