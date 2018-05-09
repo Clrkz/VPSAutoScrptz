@@ -18,3 +18,10 @@ Disable Change Password in Panel: wget https://raw.githubusercontent.com/Clrkz/V
 Updates:
 Kill Multilogin, Delete All Expired Users
 cd && wget -O ClrkzOCSUpdate "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ocs.sh" && chmod +x ClrkzOCSUpdate && sed -i -e 's/\r$//' ClrkzOCSUpdate && ./ClrkzOCSUpdate && rm ClrkzOCSUpdate
+
+# Credits
+Modder: Clrkz https://fb.com/143Clarkz
+Original script by :
+* Fornesia
+* Rzengineer
+* Fawzya
