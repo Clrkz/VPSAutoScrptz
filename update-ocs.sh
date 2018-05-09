@@ -35,11 +35,9 @@ echo " View Usage Data"
 echo " Menu Update"
 echo " Added Update Support"
 echo " "
-#echo "Are you sure you wish to continue? y/n "
- read -r -p "Are you sure you wish to continue? [y/n] " response
+ read -r -p "Are you sure? [Y/n]" response
  response=${response,,} # tolower
  if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
-
 sudo apt-get install nload
 cd /usr/bin
 wget -O menu "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-menu.sh"
