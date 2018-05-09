@@ -1,5 +1,4 @@
 #!/bin/bash
-#Update
 
 clear
 cd /usr/bin
