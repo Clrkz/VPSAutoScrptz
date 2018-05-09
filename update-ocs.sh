@@ -35,7 +35,7 @@ echo " View Usage Data"
 echo " Menu Update"
 echo " Added Update Support"
 echo " "
-echo Are you sure you wish to continue? y/n 
+echo "Are you sure you wish to continue? y/n "
 read x
 if [ "$x" = "yes" ]
 then
