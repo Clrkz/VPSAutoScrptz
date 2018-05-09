@@ -21,6 +21,7 @@ cd && wget -O ClrkzOCSUpdate "https://github.com/Clrkz/VPSAutoScrptz/raw/master/
 
 # Credits
 Modder: Clrkz https://fb.com/143Clarkz
+
 Original script by :
 * Fornesia
 * Rzengineer
