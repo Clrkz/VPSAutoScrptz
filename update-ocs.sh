@@ -49,9 +49,9 @@ wget -O update "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ocs.sh"
 wget -O ban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ban.sh"
 wget -O unban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-unban.sh"
 chmod +x menu
-chmod +x limitdb 
-chmod +x limitssh 
-chmod +x delexp 
+chmod +x limitdb
+chmod +x limitssh
+chmod +x delexp
 chmod +x usage
 chmod +x update
 chmod +x ban
