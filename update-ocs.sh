@@ -56,6 +56,7 @@ chmod +x usage
 chmod +x update
 chmod +x ban
 chmod +x unban
+sed -i -e 's/\r$//' update
 cd
 clear
 echo " "
