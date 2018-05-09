@@ -35,11 +35,9 @@ echo " View Usage Data"
 echo " Menu Update"
 echo " Added Update Support"
 echo " "
-read -p "You want to update ? " -n 1 -r
-echo    # (optional) move to a new line
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    exit
+read -p "Are you sure you wish to continue?"
+if [ "$REPLY" != "yes" ]; then
+   exit
 fi
 sudo apt-get install nload
 cd /usr/bin
