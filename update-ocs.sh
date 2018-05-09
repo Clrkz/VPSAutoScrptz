@@ -35,10 +35,12 @@ echo " View Usage Data"
 echo " Menu Update"
 echo " Added Update Support"
 echo " "
-read -p "Are you sure you wish to continue?"
-if [ "$REPLY" != "yes" ]; then
-   exit
-fi
+read "Are you sure you wish to continue? y/n "
+read x
+if [ "$x" = "yes" ]
+then
+  # do the dangerous stuff
+
 sudo apt-get install nload
 cd /usr/bin
 wget -O menu "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-menu.sh"
@@ -61,4 +63,6 @@ cd
 clear
 echo " "
 echo "DONE! OCS Autoscript Update By Clrkz" 
+menu
+fi
 menu
