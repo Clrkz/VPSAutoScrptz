@@ -1,5 +1,30 @@
 #!/bin/bash
 
+echo "clear" >> .bashrc
+echo 'echo -e "      # ###       ###                  /"' >> .bashrc
+echo 'echo -e "    /  /###  /     ###               #/"' >> .bashrc
+echo 'echo -e "   /  /  ###/       ##               ##"' >> .bashrc
+echo 'echo -e "  /  ##   ##        ##               ##"' >> .bashrc
+echo 'echo -e " /  ###             ##               ##"' >> .bashrc
+echo 'echo -e "##   ##             ##  ###  /###    ##  /##   ######"' >> .bashrc
+echo 'echo -e "##   ##             ##   ###/ #### / ## / ### /#######"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##   ###/  ##/   / /      ##"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##         ##   /         /"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##         ##  /         /"' >> .bashrc
+echo 'echo -e " ##  ##             ##    ##         ## ##        ###"' >> .bashrc
+echo 'echo -e "  ## #      /       ##    ##         ######        ###"' >> .bashrc
+echo 'echo -e "   ###     /        ##    ##         ##  ###        ###"' >> .bashrc
+echo 'echo -e "    ######/         ### / ###        ##   ### /      ##"' >> .bashrc
+echo 'echo -e "      ###            ##/   ###        ##   ##/       ##"' >> .bashrc
+echo 'echo -e "                                                     /"' >> .bashrc
+echo 'echo -e "                                                    /"' >> .bashrc
+echo 'echo -e "                                                   /"' >> .bashrc
+echo 'echo -e "                                                  /"' >> .bashrc
+echo 'echo -e "welcome to the server $HOSTNAME" | lolcat' >> .bashrc
+echo 'echo -e "Script mod by Clrkz"' >> .bashrc
+echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
+echo 'echo -e ""' >> .bashrc
+
 PARAM=$1
 echo -n > /tmp/pid2
 ps ax|grep sshd > /tmp/pid

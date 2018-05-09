@@ -1,5 +1,30 @@
 #!/bin/bash
 
+echo "clear" >> .bashrc
+echo 'echo -e "      # ###       ###                  /"' >> .bashrc
+echo 'echo -e "    /  /###  /     ###               #/"' >> .bashrc
+echo 'echo -e "   /  /  ###/       ##               ##"' >> .bashrc
+echo 'echo -e "  /  ##   ##        ##               ##"' >> .bashrc
+echo 'echo -e " /  ###             ##               ##"' >> .bashrc
+echo 'echo -e "##   ##             ##  ###  /###    ##  /##   ######"' >> .bashrc
+echo 'echo -e "##   ##             ##   ###/ #### / ## / ### /#######"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##   ###/  ##/   / /      ##"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##         ##   /         /"' >> .bashrc
+echo 'echo -e "##   ##             ##    ##         ##  /         /"' >> .bashrc
+echo 'echo -e " ##  ##             ##    ##         ## ##        ###"' >> .bashrc
+echo 'echo -e "  ## #      /       ##    ##         ######        ###"' >> .bashrc
+echo 'echo -e "   ###     /        ##    ##         ##  ###        ###"' >> .bashrc
+echo 'echo -e "    ######/         ### / ###        ##   ### /      ##"' >> .bashrc
+echo 'echo -e "      ###            ##/   ###        ##   ##/       ##"' >> .bashrc
+echo 'echo -e "                                                     /"' >> .bashrc
+echo 'echo -e "                                                    /"' >> .bashrc
+echo 'echo -e "                                                   /"' >> .bashrc
+echo 'echo -e "                                                  /"' >> .bashrc
+echo 'echo -e "welcome to the server $HOSTNAME" | lolcat' >> .bashrc
+echo 'echo -e "Script mod by Clrkz"' >> .bashrc
+echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
+echo 'echo -e ""' >> .bashrc
+
 # current time in seconds
 datenow=$(date +%s)
 
@@ -23,9 +48,9 @@ echo $diff | grep -q ^\- && echo okay && continue
 printf ""
 
 # it will ask every user that will deleted, if you want to disable the feature you can add "#" in 3 lines
-read -r -p "Are you sure you want to delete this user? [y/N] " response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
-then
+#read -r -p "Are you sure you want to delete this user? [y/N] " response
+#if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+#then
 
 # got this far, account must have expired
 echo deleting $user ...
@@ -34,7 +59,7 @@ echo deleting $user ...
 userdel -r $user
 
 # if you want to disable the 'ask' feature you can add "#" in 3 lines
-else
-exit
-fi
+#else
+#exit
+#fi
 done
