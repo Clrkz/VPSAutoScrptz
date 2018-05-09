@@ -49,13 +49,13 @@ wget -O update "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ocs.sh"
 wget -O ban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ban.sh"
 wget -O unban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-unban.sh"
 chmod +x menu
-chmod +x limitdb && sed -i -e 's/\r$//' limitdb
-chmod +x limitssh && sed -i -e 's/\r$//' limitssh
-chmod +x delexp && sed -i -e 's/\r$//' delexp
-chmod +x usage && sed -i -e 's/\r$//' usage
-chmod +x update && sed -i -e 's/\r$//' update
-chmod +x ban && sed -i -e 's/\r$//' ban
-chmod +x unban && sed -i -e 's/\r$//' unban
+chmod +x limitdb 
+chmod +x limitssh 
+chmod +x delexp 
+chmod +x usage
+chmod +x update
+chmod +x ban
+chmod +x unban
 cd
 clear
 echo " "
