@@ -48,7 +48,7 @@ wget -O usage "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-usage.sh
 wget -O update "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ocs.sh"
 wget -O ban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ban.sh"
 wget -O unban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-unban.sh"
-chmod +x menu && sed -i -e 's/\r$//' menu
+chmod +x menu
 chmod +x limitdb && sed -i -e 's/\r$//' limitdb
 chmod +x limitssh && sed -i -e 's/\r$//' limitssh
 chmod +x delexp && sed -i -e 's/\r$//' delexp
