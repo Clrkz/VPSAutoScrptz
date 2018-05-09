@@ -35,11 +35,10 @@ echo " View Usage Data"
 echo " Menu Update"
 echo " Added Update Support"
 echo " "
-echo "Are you sure you wish to continue? y/n "
-read x
-if [ "$x" = "yes" ]
-then
-  # do the dangerous stuff
+#echo "Are you sure you wish to continue? y/n "
+ read -r -p "Are you sure you wish to continue? [y/n] " response
+ response=${response,,} # tolower
+ if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
 
 sudo apt-get install nload
 cd /usr/bin
@@ -64,5 +63,4 @@ clear
 echo " "
 echo "DONE! OCS Autoscript Update By Clrkz" 
 menu
-fi
-menu
+ fi
