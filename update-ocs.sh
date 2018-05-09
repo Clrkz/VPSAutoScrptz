@@ -35,9 +35,9 @@ echo " View Usage Data"
 echo " Menu Update"
 echo " Added Update Support"
 echo " "
- read -r -p "Are you sure? [Y/n]" response
- response=${response,,} # tolower
- if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+read -r -p "Are you sure? [Y/n]" response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
 sudo apt-get install nload
 cd /usr/bin
 wget -O menu "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-menu.sh"
@@ -61,4 +61,5 @@ clear
 echo " "
 echo "DONE! OCS Autoscript Update By Clrkz" 
 menu
- fi
+fi
+menu
