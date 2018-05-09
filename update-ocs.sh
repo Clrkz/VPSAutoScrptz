@@ -45,7 +45,7 @@ wget -O limitdb "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-userli
 wget -O limitssh "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-userlimitssh.sh"
 wget -O delexp "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-delexp.sh"
 wget -O usage "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-usage.sh"
-wget -O update "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ocs.sh"
+wget -O update "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-update.sh"
 wget -O ban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-ban.sh"
 wget -O unban "https://github.com/Clrkz/VPSAutoScrptz/raw/master/update-unban.sh"
 chmod +x menu
@@ -56,7 +56,6 @@ chmod +x usage
 chmod +x update
 chmod +x ban
 chmod +x unban
-sed -i -e 's/\r$//' update
 cd
 clear
 echo " "
